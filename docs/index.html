@@ -6,12 +6,13 @@
 		Nicotine Strength<input type="text" id="str" value="3"></input>mg<br />
 		PG Dilute<input type="text" id="pg" value="30"></input>%<br />
 		VG Dilute<input type="text" id="vg" value="70"></input>%<br />
-		Flavor1<input type="text" id="flvr1" value="0"></input>%<br />
-		Flavor2<input type="text" id="flvr2" value="0"></input>%<br />
+		<div id="flavors">
+		</div>
+		<button onclick="AddFlavor( event )">Add Flavor</button><br />
 		Amount To Make<input type="text" id="amt" value="10"></input>ml<br />
 		<hr />
 
-		<table>
+		<table id="display">
 			<tr>
 				<th>Ingredient</th>
 				<th>ml</th>
@@ -37,16 +38,6 @@
 				<td id="baseml">0</td>
 				<td id="basep">0</td>
 			</tr>
-			<tr>
-				<td>Flavor1</td>
-				<td id="flvr1ml">0</td>
-				<td id="flvr1p">0</td>
-			</tr>
-			<tr>
-				<td>Flavor2</td>
-				<td id="flvr2ml">0</td>
-				<td id="flvr2p">0</td>
-			</tr>
 		</table>
 
 		<hr />
@@ -54,5 +45,9 @@
 		<p id="nicmg">Strength: </p>
 		<p id="ratio">PG/VG Ratio: </p>
 		<p id="flvrtotal">Flavor total: </p>
+
+		<div id="prompt" style="background-color: grey; position: fixed; top: 0; left: 0; visibility: hidden;">
+			Name: <input type="textarea" id="flavorname" /><button onclick="ConfirmFlavor()">Ok</button><button onclick="CancelFlavor()">X</button>
+		</div>
 	</body>
 </html>
